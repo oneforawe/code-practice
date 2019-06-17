@@ -1,13 +1,13 @@
 
-Early problems
+Problem Chronology
 
   E  001 Two Sum
   M  002 Add Two Numbers
   M  003 Longest Substring Without Repeating Characters
 
-401 (attempt / finish?)
+  E  401 Binary Watch                           (attempt / finish?)
 
-Burglar
+          Burglar                               (complete)
 
   H  72  Edit Distance                          (attempt)
   E  415 Add Strings                            (complete)

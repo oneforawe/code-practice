@@ -3,7 +3,7 @@
 
 """
 test_AddStrings.py
-~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~
 A script to test the functionality of the code in the file
 AddStrings.py.
 
