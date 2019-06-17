@@ -28,7 +28,7 @@ class Solution:
 
     def addStrings(self, num1: str, num2: str) -> str:
         # Complete code would test inputs:
-        # test inputs for length (<5100 each) and content (digits only)
+        # test inputs for length (<5100) and content (digits only, non-negative)
         # test inputs for leading zeros
 
         # Will perform addition character-by-character, using longest string
