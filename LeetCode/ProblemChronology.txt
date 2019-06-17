@@ -1,14 +1,16 @@
 
 Early problems
 
-001
-002
-003
+  E  001 Two Sum
+  M  002 Add Two Numbers
+  M  003 Longest Substring Without Repeating Characters
 
 401 (attempt / finish?)
 
 Burglar
 
-072 (attempt)
-415
+  H  72  Edit Distance                          (attempt)
+  E  415 Add Strings                            (complete)
+  M  043 Multiply Strings                       (complete; low performance)
+
 

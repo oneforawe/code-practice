@@ -64,7 +64,8 @@ class Solution:
 
 
 def main():
-    """Apply addStrings() to input file, outputing to output file."""
+    """Apply addStrings() to input file, print to output file and
+    screen."""
     soln = Solution()
     with open('Output.txt', 'w') as file_out:
         for line in open(sys.argv[1], 'r'):

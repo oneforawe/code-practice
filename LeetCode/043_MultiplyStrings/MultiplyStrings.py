@@ -58,7 +58,7 @@ class Solution:
 
 
 def main():
-    """Apply addStrings() to input file, outputing to output file."""
+    """Apply multiply() to input file, print to output file & screen."""
     soln = Solution()
     with open('Output.txt', 'w') as file_out:
         for line in open(sys.argv[1], 'r'):
@@ -90,5 +90,9 @@ Input: num1 = "123", num2 = "456"
    56088
 
 Output: "56088"
+
+Might be able to speed up my code by building each partial product as a string,
+digit by digit (with a carry-over value), converting to an int when adding into
+product_accumulator.
 """
 
