@@ -27,20 +27,41 @@ import sys
 class Solution:
 
     def addStrings(self, num1: str, num2: str) -> str:
+        # Complete code would test inputs:
+        # test inputs for length (<5100 each) and content (digits only)
+        # test inputs for leading zeros
+
+        # Will perform addition character-by-character, using longest string
+        # (and max number) as reference; so first find longest string:
+        if len(num1) >= len(num2):
+            num_max, num_min = num1, num2
+        else:
+            num_max, num_min = num2, num1
+        len_max, len_min = len(num_max), len(num_min)
+
+        # Prepare for addition
         sum_str = ""
         carry = 0
-        for char1, char2 in zip(reversed(num1), reversed(num2)):
-            dig1, dig2 = int(char1), int(char2)
-            sum_in_place = dig1 + dig2 + carry
+
+        # Perform addition across all characters of longest string
+        # (using right-most, lowest place-valued characters first)
+        for i in range(len_max):
+            digA = int(num_max[-1-i])
+            if i < len_min:
+                digB = int(num_min[-1-i])
+            else:
+                digB = 0
+            sum_in_place = digA + digB + carry
             dig_in_place = sum_in_place % 10
-            carry = sum_in_place - dig_in_place
+            carry = (sum_in_place - dig_in_place) // 10
             sum_str = str(dig_in_place) + sum_str
+
+        # Any left-over carry value must be added
         if carry != 0:
             sum_str = str(carry) + sum_str
+
         return sum_str
 
-# 123 321 444
-# 999 999 30888
 
 def main():
     """Apply addStrings() to input file, outputing to output file."""
@@ -49,7 +70,8 @@ def main():
         for line in open(sys.argv[1], 'r'):
             num1, num2 = tuple(line.rstrip().split())
             result = soln.addStrings(num1, num2)
-            file_out.write(num1 + ' ' + num2 + ' ' + str(result) + '\n')
+            file_out.write(num1 + ' ' + num2 + ' ' + result + '\n')
+            print(num1 + ' ' + num2 + ' ' + result)
 
 
 if __name__ == '__main__':
