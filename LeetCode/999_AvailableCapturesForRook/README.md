@@ -1,40 +1,75 @@
 
-## 
+## 999. Available Captures for Rook
+
+Easy
+
+On an 8 x 8 chessboard, there is one white rook.  There also may be empty squares, white bishops, and black pawns.  These are given as characters 'R', '.', 'B', and 'p' respectively. Uppercase characters represent white pieces, and lowercase characters represent black pieces.
+
+The rook moves as in the rules of Chess: it chooses one of four cardinal directions (north, east, west, and south), then moves in that direction until it chooses to stop, reaches the edge of the board, or captures an opposite colored pawn by moving to the same square it occupies.  Also, rooks cannot move into the same square as other friendly bishops.
+
+Return the number of pawns the rook can capture in one move.
+
+
+Example 1:
+
+Input:  
+[[".",".",".",".",".",".",".","."],  
+ [".",".",".","p",".",".",".","."],  
+ [".",".",".","R",".",".",".","p"],  
+ [".",".",".",".",".",".",".","."],  
+ [".",".",".",".",".",".",".","."],  
+ [".",".",".","p",".",".",".","."],  
+ [".",".",".",".",".",".",".","."],  
+ [".",".",".",".",".",".",".","."]]  
+Output: 3  
+Explanation:  
+In this example the rook is able to capture all the pawns.  
+
+
+Example 2:
+
+Input:  
+[[".",".",".",".",".",".",".","."],  
+ [".","p","p","p","p","p",".","."],  
+ [".","p","p","B","p","p",".","."],  
+ [".","p","B","R","B","p",".","."],  
+ [".","p","p","B","p","p",".","."],  
+ [".","p","p","p","p","p",".","."],  
+ [".",".",".",".",".",".",".","."],  
+ [".",".",".",".",".",".",".","."]]  
+Output: 0  
+Explanation:  
+Bishops are blocking the rook to capture any pawn.  
+
+
+Example 3:
+
+Input:  
+[[".",".",".",".",".",".",".","."],  
+ [".",".",".","p",".",".",".","."],  
+ [".",".",".","p",".",".",".","."],  
+ ["p","p",".","R",".","p","B","."],  
+ [".",".",".",".",".",".",".","."],  
+ [".",".",".","B",".",".",".","."],  
+ [".",".",".","p",".",".",".","."],  
+ [".",".",".",".",".",".",".","."]]  
+Output: 3  
+Explanation:  
+The rook can capture the pawns at positions b5, d6 and f5.  
+
+
+Note:
+
+board.length == board[i].length == 8  
+board[i][j] is either 'R', '.', 'B', or 'p'  
+There is exactly one cell with board[i][j] == 'R'  
 
 
 
-
-
-
-
-
-
-## 43. Multiply Strings
-
-Medium
-
-Given two non-negative integers num1 and num2 represented as strings, return the product of num1 and num2, also represented as a string.
-
-Example 1:  
-Input: num1 = "2", num2 = "3"  
-Output: "6"  
-
-Example 2:  
-Input: num1 = "123", num2 = "456"  
-Output: "56088"  
-
-Note:  
-The length of both num1 and num2 is < 110.  
-Both num1 and num2 contain only digits 0-9.  
-Both num1 and num2 do not contain any leading zero, except the number 0 itself.  
-You must not use any built-in BigInteger library or convert the inputs to integer directly.  
-
-
-
-## Provided Beginning of Answer
+## Provided Beginning of Solution
 
 ```
 class Solution:
-    def multiply(self, num1: str, num2: str) -> str:
+    def numRookCaptures(self, board: List[List[str]]) -> int:
 ```
 

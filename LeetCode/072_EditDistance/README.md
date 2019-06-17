@@ -31,7 +31,7 @@ exection -> execution (insert 'u')
 
 
 
-## Provided Beginning of Answer
+## Provided Beginning of Solution
 
 ```
 class Solution:

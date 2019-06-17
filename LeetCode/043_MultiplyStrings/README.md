@@ -21,7 +21,7 @@ You must not use any built-in BigInteger library or convert the inputs to intege
 
 
 
-## Provided Beginning of Answer
+## Provided Beginning of Solution
 
 ```
 class Solution:
