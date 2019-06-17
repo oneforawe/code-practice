@@ -1,0 +1,9 @@
+s = ""                  p = ""        c = ""        max_length = 0
+s = "a"                 p = ""        c = "a"       max_length = 1
+s = "abcdabracadabra"   p = "cdabr"   c = "bra"     max_length = 5
+s = "abcabcbb"          p = "abc"     c = "b"       max_length = 3
+s = "bbbbb"             p = "b"       c = "b"       max_length = 1
+s = "pwwkew"            p = "wke"     c = "kew"     max_length = 3
+s = "abcdamn"           p = "abcd"    c = "bcdamn"  max_length = 6
+s = "abcdambq"          p = "bcdam"   c = "cdambq"  max_length = 6
+s = "abcbamboy"         p = "cbam"    c = "amboy"   max_length = 5

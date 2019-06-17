@@ -1,0 +1,57 @@
+
+H = Hard
+M = Medium
+E = Easy
+
+L = Locked
+
+
+Square
+---------------------------------------
+
+Ordered:
+  E  415 Add Strings
+  E  999 Available Captures for Rook
+
+  M  15  3Sum
+  M  17  Letter Combinations of a Phone Number
+  H  68  Text Justification
+  M  79  Word Search
+  M  91  Decode Ways
+  M  98  Validate Binary Search Tree
+  M  127 Word Ladder
+  M  139 Word Break
+  M  208 Implement Trie (Prefix Tree)
+  M  210 Course Schedule II
+L M  271 Encode and Decode Strings
+  M  284 Peeking Iterator
+  M  289 Game of Life
+  M  573 Squirrel Simulation
+  M  969 Pancake Sorting
+
+  H  72  Edit Distance
+  H  699 Falling Squares
+
+
+Original:
+  H  72  Edit Distance
+  M  969 Pancake Sorting
+L M  271 Encode and Decode Strings
+  M  91  Decode Ways
+  M  284 Peeking Iterator
+  H  68  Text Justification
+  M  289 Game of Life
+  M  208 Implement Trie (Prefix Tree)
+  E  415 Add Strings
+  M  127 Word Ladder
+  M  17  Letter Combinations of a Phone Number
+  M  210 Course Schedule II
+  M  15  3Sum
+  M  79  Word Search
+  M  139 Word Break
+  M  98  Validate Binary Search Tree
+  M  573 Squirrel Simulation
+  H  699 Falling Squares
+  E  999 Available Captures for Rook
+
+
