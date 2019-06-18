@@ -31,17 +31,9 @@ from typing import List
 
 class Solution:
 
-    def __init__(self):
-        self.board = None
-        self.Ri = None
-        self.Rj = None
-        self.num = 0   # number of possible pawn captures by rook
-
     def numRookCaptures(self, board: List[List[str]]) -> int:
-        """Find num, the number of possible pawn captures by the rook."""
-        self.board = board
-        # Re-initialize
-        self.num = 0
+        # Initialize
+        num = 0
         # Find the rook
         found = False
         for i, row in enumerate(board):
@@ -49,35 +41,45 @@ class Solution:
                 if square == 'R':
                     Ri = i
                     Rj = j
-                    self.Ri = Ri
-                    self.Rj = Rj
                     found = True
                     break
             if found == True:
                 break
         # Check rook's column and row for possible pawn captures
         # upward
-        squares = Ri           # number of squares above rook
-        self.search_for_pawn_to_capture(squares, vert_incr = 1, horiz_incr = 0)
-        # downward
-        squares = 8 - (Ri + 1) # number of squares below rook
-        self.search_for_pawn_to_capture(squares, vert_incr = -1, horiz_incr = 0)
-        # leftward
-        squares = Rj           # number of squares left of rook
-        self.search_for_pawn_to_capture(squares, vert_incr = 0, horiz_incr = -1)
-        # rightward
-        squares = 8 - (Rj + 1) # number of squares right of rook
-        self.search_for_pawn_to_capture(squares, vert_incr = 0, horiz_incr = 1)
-
-        return self.num
-
-    def search_for_pawn_to_capture(self, squares, vert_incr, horiz_incr):
+        squares = Ri # number of squares above rook
         for k in range(1, squares + 1):
-            check = self.board[self.Ri - vert_incr * k][self.Rj + horiz_incr * k]
+            check = board[Ri - k][Rj]
             if check != '.':
                 if check == 'p':
-                    self.num += 1
+                    num += 1
                 break
+        # downward
+        squares = 8 - (Ri + 1) # number of squares below rook
+        for k in range(1, squares + 1):
+            check = board[Ri + k][Rj]
+            if check != '.':
+                if check == 'p':
+                    num += 1
+                break
+        # leftward
+        squares = Rj # number of squares left of rook
+        for k in range(1, squares + 1):
+            check = board[Ri][Rj - k]
+            if check != '.':
+                if check == 'p':
+                    num += 1
+                break
+        # rightward
+        squares = 8 - (Rj + 1) # number of squares right of rook
+        for k in range(1, squares + 1):
+            check = board[Ri][Rj + k]
+            if check != '.':
+                if check == 'p':
+                    num += 1
+                break
+        return num
+
 
 def main():
     """Apply numRookCaptures() to input file, print to output file & screen."""
