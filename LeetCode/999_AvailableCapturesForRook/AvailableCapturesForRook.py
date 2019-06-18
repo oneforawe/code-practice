@@ -1,71 +1,59 @@
 #!/usr/bin/env python3
-# filename: MultiplyStrings.py
-# purpose: Solve leetcode problem 43 "Multiply Strings".
+# filename: AvailableCapturesForRook.py
+# purpose: Solve leetcode problem 999 "Available Captures for Rook".
 
 
 """
-MultiplyStrings.py
-~~~~~~~~~~~~~~~~~~
-Given two non-negative integers num1 and num2 represented as strings,
-return the product of num1 and num2, also represented as a string.
+AvailableCapturesForRook.py
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+On an 8 x 8 chessboard, there is one white rook.  There also may be
+empty squares, white bishops, and black pawns.  These are given as
+characters 'R', '.', 'B', and 'p' respectively.  Uppercase characters
+represent white pieces, and lowercase characters represent black pieces.
 
-Example 1:
-Input: num1 = "2", num2 = "3"
-Output: "6"
+The rook moves as in the rules of Chess: it chooses one of four cardinal
+directions (north, east, west, and south), then moves in that direction
+until it chooses to stop, reaches the edge of the board, or captures an
+opposite colored pawn by moving to the same square it occupies.  Also,
+rooks cannot move into the same square as other friendly bishops.
 
-Example 2:
-Input: num1 = "123", num2 = "456"
-Output: "56088"
-
-Note:
-The length each number is < 110.
-Both num1 and num2 contain only digits 0-9.
-Neither num1 nor num2 contain any leading zeros, except the number 0 itself.
-This script does not use any built-in BigInteger libraries nor does it
-convert the inputs to integers directly.
+Return the number of pawns the rook can capture in one move.
 
 To operate, execute the following in a shell terminal:
-python3 AddStrings.py Input.txt
+python3 AvailableCapturesForRook.py Input.txt
 """
 
 import os
 import sys
+from typing import List
 
 
 class Solution:
 
-    def multiply(self, num1: str, num2: str) -> str:
-        # Complete code would test inputs:
-        # test inputs for length (<110) and content (digits only, non-negative)
-        # test inputs for leading zeros
-
-        # Prepare for multiplication
-        product_accumulator = 0
-
-        # Perform multiplication place by place (of num2) and digit by digit
-        for i, char2 in enumerate(reversed(num2)):
-            partial_product = 0
-            dig2 = int(char2)
-            for j, char1 in enumerate(reversed(num1)):
-                dig1 = int(char1)
-                partial_product += (dig1 * 10**i) * (dig2 * 10**j)
-            product_accumulator += partial_product
-
-        # Translate product into a string
-        product_str = str(product_accumulator)
-
-        return product_str
+    def numRookCaptures(self, board: List[List[str]]) -> int:
+        num = -1
+        return num
 
 
 def main():
-    """Apply multiply() to input file, print to output file & screen."""
+    """Apply numRookCaptures() to input file, print to output file & screen."""
     soln = Solution()
     with open('Output.txt', 'w') as file_out:
-        for line in open(sys.argv[1], 'r'):
-            num1, num2 = tuple(line.rstrip().split())
-            result = soln.multiply(num1, num2)
-            file_out.write(num1 + ' ' + num2 + ' ' + result + '\n')
-            print(num1 + ' ' + num2 + ' ' + result)
+        file_out.write('\n') # blank line to start
+        print('')
+        with open(sys.argv[1], 'r') as file_in:
+            num_trials = int(file_in.readline().rstrip())
+            for _ in range(num_trials):
+                file_in.readline() # blank line between inputs
+                board_str_multiline = ''
+                for _ in range(8):
+                    board_str_multiline += file_in.readline()
+                board_str = board_str_multiline.replace('\n','').replace(' ','')
+                board = list(board_str)
+                result = soln.numRookCaptures(board)
+                output_str = board_str_multiline + str(result) + '\n'
+                file_out.write(output_str + '\n')
+                print(output_str)
 
 
 if __name__ == '__main__':
@@ -75,24 +63,5 @@ if __name__ == '__main__':
 """
 Notes
 
-One solution would be to perform the multiplication as one would do on paper in
-the traditional way, digit by digit, or character by character:
-
-Input: num1 = "123", num2 = "456"
-
-     123
-   x 456                           partial_product       product_accumulator
-  -------                         -------------------   ---------------------
-     738  units place (of num2)    738                    738
-    6150  tens place               6150                   738+6150 = 6888
- + 49200  hundreds place           49200                  6888+49200 = 56088
- --------
-   56088
-
-Output: "56088"
-
-Might be able to speed up my code by building each partial product as a string,
-digit by digit (with a carry-over value), converting to an int when adding into
-product_accumulator.
 """
 
