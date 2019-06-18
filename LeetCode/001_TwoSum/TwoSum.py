@@ -24,8 +24,9 @@ import os
 import sys
 
 
-class Solution :
-    def twoSum(self, nums, target) :
+class Solution:
+
+    def twoSum(self, nums, target):
         """
         :type nums: List[int]
         :type target: int
@@ -37,9 +38,9 @@ class Solution :
         # test target is an integer
 
         complements = set()
-        for i in range(0, len(nums)) :
+        for i in range(len(nums)):
             complement = target - nums[i]
-            if nums[i] in complements :
+            if nums[i] in complements:
                 return [ nums.index(complement), i ]
             complements.add(complement)
 
