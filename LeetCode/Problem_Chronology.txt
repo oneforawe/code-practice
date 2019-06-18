@@ -12,5 +12,6 @@ Problem Chronology
   H  72  Edit Distance                          (attempt)
   E  415 Add Strings                            (complete)
   M  043 Multiply Strings                       (complete; low performance)
+  E  999 Available Captures for Rook            (complete)
 
 
