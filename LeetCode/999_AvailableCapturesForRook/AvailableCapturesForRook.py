@@ -79,6 +79,7 @@ class Solution:
                     self.num += 1
                 break
 
+
 def main():
     """Apply numRookCaptures() to input file, print to output file & screen."""
     soln = Solution()
