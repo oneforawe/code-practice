@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # filename: CourseSchedule.py
-# purpose: Solve leetcode problem 207 "CourseSchedule".
+# purpose: Solve leetcode problem 207 "Course Schedule".
 
 
 """
