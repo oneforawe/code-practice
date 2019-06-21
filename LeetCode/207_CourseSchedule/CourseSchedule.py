@@ -36,7 +36,7 @@ assume that there are no duplicate edges in the input prerequisites.
 
 
 To operate, execute the following in a shell terminal:
-python3 3Sum.py Input.txt
+python3 CourseSchedule.py Input.txt
 """
 
 import os
