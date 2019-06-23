@@ -1,0 +1,14 @@
+// 2, [[1,0],[0,1]]
+// False
+
+digraph "2a" {
+    graph [dpi=300]
+    layout="dot"
+
+    node [shape="circle", fontsize=16]
+    0, 1
+
+    0 -> 1
+    1 -> 0
+}
+

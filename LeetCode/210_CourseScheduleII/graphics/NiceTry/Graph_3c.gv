@@ -1,0 +1,19 @@
+// 4, [[1,0],[2,1],[3,2],[1,3]]
+// False
+
+digraph "3c" {
+    //layout="neato"
+    graph [dpi=300]
+
+    node [shape="circle", fontsize=16]
+    { rank="same"; 0 [group=g1]; 1 [group=g2]; }
+    2 [group=g3]
+    3 [group=g3]
+
+    0:e -> 1:w [weight=2]
+    2:e -> 3:e [weight=2, constraint="false"]
+    1:s -> 2:w
+    3:w -> 1:n
+}
+
+

@@ -1,0 +1,21 @@
+// 6, [[1,0],[1,4],[1,5],[3,2],[5,2]]
+// True
+
+digraph "7b" {
+    graph [dpi=300]
+    layout="dot"
+
+    node [shape="circle", fontsize=16]
+    0, 1, 2, 3, 4, 5
+
+    0 -> 1 [style="solid"]
+    1 -> 2 [style="invis", weight=100]
+    2 -> 3 [style="solid"]
+    3 -> 4 [style="invis", weight=100]
+    4 -> 5 [style="invis"]
+
+    4 -> 1
+    5 -> 1
+    2 -> 5
+}
+

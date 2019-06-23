@@ -1,0 +1,13 @@
+// 2, [[1,0]]
+// True
+
+digraph 1 {
+    graph [dpi=300]
+    layout="dot"
+
+    node [shape="circle", fontsize=16]
+    0, 1
+
+    0 -> 1
+}
+
