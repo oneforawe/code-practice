@@ -1,0 +1,24 @@
+// 6, [[1,0],[2,0],[3,0],[4,0],[5,0],[2,1],[5,4]]
+// True
+
+digraph "6_soln" {
+    graph [dpi=300]
+    layout="dot"
+
+    node [shape="circle", fontsize=16]
+    0, 1, 2, 3, 4, 5
+
+    0 -> 1 [style="solid", weight=100]
+    1 -> 3 [style="invis", weight=100]
+    3 -> 4 [style="invis", weight=100]
+    4 -> 2 [style="invis", weight=100]
+    2 -> 5 [style="invis", weight=100]
+
+    0 -> 2
+    0 -> 3
+    0 -> 4
+    0 -> 5
+    1 -> 2
+    4 -> 5
+}
+
