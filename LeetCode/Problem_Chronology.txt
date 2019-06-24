@@ -9,9 +9,12 @@ Problem Chronology
 
           Burglar                               (complete)
 
-  H  72  Edit Distance                          (attempt)
+  H  072 Edit Distance                          (attempt)
   E  415 Add Strings                            (complete)
   M  043 Multiply Strings                       (complete; low performance)
   E  999 Available Captures for Rook            (complete)
+  M  015 3Sum                                   (complete)
+  M  207 Course Schedule                        (complete)
+  M  210 Course Schedule II                     (complete)
 
 
