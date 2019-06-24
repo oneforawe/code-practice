@@ -1,7 +1,41 @@
 #!/usr/bin/env python3
-#filename: LongestSubstring.py
+# filename: LongestSubstring.py
+# purpose: Solve leetcode problem 003 "Longest Substring Without
+#          Repeating Characters".
+
+"""
+LongestSubstring.py
+~~~~~~~~~~~~~~~~~~~
+Given a string, find the length of the longest substring without
+repeating characters.
+
+Example 1:
+Input: "abcabcbb"
+Output: 3
+Explanation: The answer is "abc", with the length of 3.
+
+Example 2:
+Input: "bbbbb"
+Output: 1
+Explanation: The answer is "b", with the length of 1.
+
+Example 3:
+Input: "pwwkew"
+Output: 3
+Explanation: The answer is "wke", with the length of 3.
+             Note that the answer must be a substring, "pwke" is a
+             subsequence and not a substring.
+
+To operate, execute the following in a shell terminal:
+python3 LongestSubstring.py Input.txt
+"""
+
+import sys
+import os
+
 
 class Solution:
+
     def lengthOfLongestSubstring(self, s: str) -> int:
         """Return length of the longest substring of a string."""
         c = "" # substring (current)
@@ -18,24 +52,24 @@ class Solution:
         return max(len(c), len(p))
 
 
-if __name__ == '__main__':
-
-    import sys
-    import os
-
+def main():
+    """Apply lengthOfLongestSubstring() to input file, print to output
+    file & screen."""
     soln = Solution()
+    with open('Output.txt', 'w') as file_out:
+        with open(sys.argv[1], 'r') as file_in:
+            num_trials = int(file_in.readline().rstrip())
+            for _ in range(num_trials):
+                string = file_in.readline().rstrip().strip('\"')
+                result = soln.lengthOfLongestSubstring(string)
+                #output_str = board_str_multiline + str(result) + '\n'
+                file_out.write( str(result) + '\n' )
+                print(result)
+                #file_out.write(output_str + '\n')
+                #print(output_str)
 
-    f_in = open(sys.argv[1],'r')
 
-    os.environ['OUTPUT_PATH'] = "./Output.txt"
-    f_out = open(os.environ['OUTPUT_PATH'],'w')
+if __name__ == '__main__':
+    main()
 
-    num_strings = int(f_in.readline())
-    for _ in range(num_strings):
-        string = f_in.readline().strip('\n').strip('\"')
-        result = soln.lengthOfLongestSubstring(string)
-        f_out.write( str(result) + '\n' )
-
-    f_in.close()
-    f_out.close()
 
