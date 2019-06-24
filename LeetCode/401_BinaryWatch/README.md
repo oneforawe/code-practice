@@ -23,7 +23,7 @@ The hour must not contain a leading zero, for example "01:00" is not valid, it s
 The minute must be consist of two digits and may contain a leading zero, for example "10:2" is not valid, it should be "10:02".  
 
 
-[logo]: https://github.com/oneforawe/code-practice/blob/master/LeetCode/401_BinaryWatch/img/Binary_clock_samui_moon.jpg "photo of a binary watch"
+[binary_watch_image]: https://github.com/oneforawe/code-practice/blob/master/LeetCode/401_BinaryWatch/img/Binary_clock_samui_moon.jpg "photo of a binary watch"
 
 
 
