@@ -12,8 +12,8 @@ You may assume that each input would have exactly one solution, and you
 may not use the same element twice.
 
 Example:
-Given nums = [2, 7, 11, 15], target = 9,
-Because nums[0] + nums[1] = 2 + 7 = 9,
+Given nums = [2, 7, 11, 15] and target = 9,
+since nums[0] + nums[1] = 2 + 7 = 9,
 return [0, 1].
 
 To operate, execute the following in a shell terminal:
