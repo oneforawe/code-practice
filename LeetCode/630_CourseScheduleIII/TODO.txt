@@ -1,0 +1,4 @@
+Examine the solution in `discuss_soln` more carefully.
+
+Understand the explanation and the data structure (heap) usage.
+
