@@ -1,0 +1,89 @@
+.light-and-control-container {
+  margin: 30px;
+  padding: 30px;
+  background: lightblue;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.controls-container {
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  padding: 10px;
+  background: lightgray;
+  border: 3px solid darkgray;
+  border-radius: 3px;
+}
+.power-controls {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.sequence-controls {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.stepping-control {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+
+.lights-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.traffic-light {
+  width: 120px;
+  padding: 20px;
+  background: black;
+  border-radius: 5px;
+  margin: 30px;
+}
+
+.circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin: 10px;
+}
+
+.small-circle {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.control-light-rim {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin: 5px;
+  border: 2px solid black;
+}
+
+.red    { opacity: 0.4; background: red; }
+.yellow { opacity: 0.4; background: yellow; }
+.green  { opacity: 0.4; background: lightgreen; }
+.orange { opacity: 0.2; background: rgb(255, 206, 116); }
+
+.lit { opacity: 1; box-shadow: 0 0 50px #fff; }
+
+button {
+  cursor: pointer;
+}
+.hidden {
+  visibility: hidden;
+}
