@@ -1,0 +1,149 @@
+.App {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.controls-container {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 10px;
+  background: lightgray;
+  border: 3px solid darkgray;
+  border-radius: 10px;
+}
+
+.controls-title {
+  width: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+
+.control-section {
+  width: 100%;
+  padding-top: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.control-title {
+  width: 4rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.control-mechanisms-container {
+  width: 10%;
+  flex-grow: 1;
+  margin: 5px;
+  padding: 10px;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  background: rgb(240, 240, 240);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.control-unit {
+  margin: 0 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.control-setting-name {
+  color: dimgray;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.control-button-group {
+  margin-left: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.control-light-rim {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin: 5px;
+  border: 2px solid black;
+}
+.control-light {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgb(255, 206, 116);
+  opacity: 0.2;
+}
+.lit { opacity: 1; box-shadow: 0 0 50px #fff; }
+
+.clock-face {
+  margin: 10px;
+  padding: 20px;
+  border: 30px solid black;
+  background: rgb(62, 62, 62);
+  color: red;
+  font-family: monospace;
+  font-size: 6rem;
+}
+
+
+.state-internals {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: lightgray;
+  border: 3px solid darkgray;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 20px;
+}
+
+.state-internals-title {
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.state-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.state-title {
+  width: 8rem;
+  text-align: left;
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.state-readout {
+  width: 13rem;
+  text-align: left;
+}

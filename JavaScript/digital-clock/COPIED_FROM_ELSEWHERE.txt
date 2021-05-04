@@ -1,0 +1,41 @@
+This directory was copied from
+/Users/zero/Dev/Learn/CodePractice/JavaScript/Course_DaveCeddia_Redux/02-Redux-Core-Concepts/02-Reduce/02c-digital-clock
+
+Edit the files there if you want to change something (except for this file; edit here freely).
+
+
+
+
+=============================================================================================
+ Strategy for copying/referring to this project
+=============================================================================================
+
+Below, I'm talking about
+code-practice repo, with a subfolder Course_DaveCeddia_Redux, with a "package" called traffic-lights
+
+
+
+Let's say you have a git repo with a subfolder that is currently ignored with .gitignore.  Let's say that deep in that subfolder, there's a small package you'd like to include in the repo.  How would you go about including it?
+
+I have a few ideas, but none that I like and have totally figured out:
+
+0) Restructure the directory / Move the package.  (I don't really want to do this.)
+
+1) Create another repo at that package and include it as a submodule somewhere/anywhere in the original repo.  (However, I don't really want the package public by itself on my github; I just want it public within the original repo.)
+
+2) Use .gitignore to just ignore everything in the folder except the path straight to the package.  (This is a little ugly and will show the full path to the package.)
+
+3) Use a symbolic link somehow.  Not sure how to get this to work, so that the package really shows up in the repo (instead of just a text file with the path) and stays there.  In the long-run this might require creating git subroutines or hooks to automate handling upkeep of the link.
+
+4) Use a symbolic reference somehow. (?) https://git-scm.com/docs/git-symbolic-ref
+
+5) Use subtrees somehow. (?) https://medium.com/@porteneuve/mastering-git-subtrees-943d29a798ec
+
+6) Use git-subrepo somehow. (?) https://github.com/ingydotnet/git-subrepo#readme
+
+
+
+I ended up just making a manual copy of the "package" in a convenient place in the repo.  It's not something I'll be editing a lot, so it's not a terrible solution.
+
+I could try doing a submodule instead, and see if I can either make the module-repo invisible (within the same github account), or create a whole new github account to host miscellaneous stuff I don't want cluttering up my account: oneforawe-declutter (?).
+
