@@ -34,5 +34,5 @@ contents go...
    * To view table of contents: `tar -tvf package-name.tar.gz`
 
 4. Upload the `package-name.tar.gz` file to the host server (eg, in
-`public_html/demos`)and extract / uncompress it there, renaming the `build`
+`public_html/demos`) and extract / uncompress it there, renaming the `build`
 folder linking to it appropriately.
