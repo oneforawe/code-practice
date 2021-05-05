@@ -12,32 +12,27 @@ See README_original.md for more information.
 
 ## Notes on uploading a build version for hosting demos
 
-Here are some notes to myself.  To host a react-app demo,
-1. edit the `package.json` file,
-2. create a `build` folder/version,
-3. compress the `build` folder,
-4. upload that compressed `build` folder to the host server, extract/uncompress
-the contents, and change the folder name and link to it appropriately.
+Here are some notes to myself.  To host a react-app demo:
+1. Edit the `package.json` file: add `"homepage": "./"`, so part of the file
+contents go...  
+  * from:  
+    `"name": "package-name",`
+    `"version": "0.1.0",`
+    `"private": true,`
+  * to:  
+    `"name": "package-name",`
+    `"version": "0.1.0",`
+    `"homepage": "./",`
+    `"private": true,`
 
-Add `"homepage": "./"` to the `package.json` file.  Specifically, change a part
-of it...
-* from:  
-  `"name": "package-name",`
-  `"version": "0.1.0",`
-  `"private": true,`
-* to:  
-  `"name": "package-name",`
-  `"version": "0.1.0",`
-  `"homepage": "./",`
-  `"private": true,`
+2. Create a `build` folder/version:
+  * Run `npm run build` in the shell, in the react-app top `package-name` folder.
 
-Create a `build` version:
-* Run `npm run build` in the shell, in the react-app top `package-name` folder.
+3. Compress the `build` folder:
+  * `tar -zcvf package-name.tar.gz build`
+  * To uncompress: `tar -zxvf package-name.tar.gz`
+  * To view table of contents: `tar -tvf package-name.tar.gz`
 
-Compress the `build` folder.
-* `tar -zcvf package-name.tar.gz build`
-* To uncompress: `tar -zxvf package-name.tar.gz`
-* To view table of contents: `tar -tvf package-name.tar.gz`
-
-Upload-to and extract the package in the host server (eg, in
-`public_html/demos`).
+4. Upload the `package-name.tar.gz` file to the host server (eg, in
+`public_html/demos`)and extract / uncompress it there, renaming the `build`
+folder linking to it appropriately.
