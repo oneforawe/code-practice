@@ -1,6 +1,8 @@
 This directory was copied from
 /Users/zero/Dev/Learn/CodePractice/JavaScript/Course_DaveCeddia_Redux/02-Redux-Core-Concepts/02-Reduce/02c-digital-clock
 
+...removing package-name.tar.gz and the `node_modules` and `build` folders.
+
 Edit the files there if you want to change something (except for this file; edit here freely).
 
 

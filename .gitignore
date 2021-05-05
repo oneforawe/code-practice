@@ -20,4 +20,9 @@ python
 # Specific files
 LeetCode/Problems_for_Companies.txt
 JavaScript/DataStructures/CreateMasterFileHere.txt
-JavaScript/traffic-lights/COPIED_FROM_ELSEWHERE.txt
+
+# Multiple files
+COPIED_FROM_ELSEWHERE.txt
+# EG,
+# JavaScript/traffic-lights/COPIED_FROM_ELSEWHERE.txt
+# JavaScript/digital-clock/COPIED_FROM_ELSEWHERE.txt
