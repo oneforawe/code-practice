@@ -40,11 +40,11 @@
           (memory address for index i)
             = (memory address for index 0) + i * (memory-size for each element)
 
-      - Arrays can be "dynamic" as well as "static", where the size of the
-        array can be changed as it is in use (between being declared and
-        deleted or garbage-collected).  I call this dynamism feature an
-        "extension" to the foundational array concept, so the functions or
-        "methods" that implement this feature are called "extenders".
+      - Arrays can also be "dynamic", where the size of the array can be
+        changed as it is in use (between being declared and deleted or garbage-
+        collected).  I call this dynamism feature an "extension" to the
+        foundational array concept, so the functions or "methods" that
+        implement this feature are called "extenders".
 
   Methods (2 main, 2 helper, 2 extender, ~2 extender-helper):
     set(i, v): Assign a value v at index i; (length of array not modified).
