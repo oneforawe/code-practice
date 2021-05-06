@@ -238,4 +238,4 @@ the shell. */
 //   console.log('Do I make it this far? No.');
 // }
 
-// testMyArrayStuff();
+// testSimpleArrayErrorHandling();
