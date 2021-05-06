@@ -180,7 +180,8 @@ class SimpleArray {
   // special case of delete: delete at start
   shift = () => {
     this.shiftValues(0, true);
-    return this.shorten();
+    this.shorten();
+    return this.length;
   }
 
   // special case of insert: insert at start
