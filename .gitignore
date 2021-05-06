@@ -6,6 +6,7 @@
 
 # Specific sub-folders
 Anglican
+Bash
 CSS
 CodeWars
 CrackingCodeInterview
@@ -14,8 +15,7 @@ JavaScript/PureReact
 JavaScript/UdemyCourse1_JS
 JavaScript/UdemyCourse2_CodingInterview
 ProjEuler
-bash
-python
+Python/Noisebridge
 
 # Specific files
 LeetCode/Problems_for_Companies.txt

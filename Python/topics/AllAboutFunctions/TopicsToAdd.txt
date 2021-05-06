@@ -1,0 +1,6 @@
+
+
+Could add a directory on decorators.
+See, eg, https://realpython.com/primer-on-python-decorators/
+
+

@@ -1,0 +1,86 @@
+
+
+Desire
+======
+
+I'd like to be able to have precise control over the "executable environment" (for lack of a better term) when executing python code.  For instance, I think, having control over environment variables and ~options.  Or, more specifically (if this is applicable), I'd like to be able to run previous versions of python3  (such as python3.2, ie python3.2.6) on code that was guaranteed to work with that version.
+
+
+Things to re-look into
+======================
+
+autoenv
+virtualenv
+virtualenvwrapper
+
+virtualenv tutorial: http://www.simononsoftware.com/virtualenv-tutorial-part-2/
+
+direnv ?
+easy_install ?
+
+pyenv-installer
+pyenv
+
+
+Trying to get virtual environments / etc working
+================================================
+
+I did this in my Kubuntu system while working on the Springboard entrance test.
+(wrote these notes in a file named notes_for_pretest.txt)
+
+Wanted to use some kind of environment program:
+so I can run different versions of python (Python 3.2, 3.2.6)
+
+(but maybe all I need to do is refer to the correct python at the top of the file AND have the appropriate version of python installed)
+(I was having trouble / failures when installing python3.2.6:
+
+Ran ./configure
+Ran make
+Ran make test
+
+ but found the following
+
+321 tests OK.
+2 tests failed:
+    test_ftplib test_ssl
+4 tests altered the execution environment:
+    test_logging test_multiprocessing test_threaded_import
+    test_urllib2_localnet
+29 tests skipped:
+    test_bz2 test_codecmaps_cn test_codecmaps_hk test_codecmaps_jp
+    test_codecmaps_kr test_codecmaps_tw test_curses test_dbm_gnu
+    test_dbm_ndbm test_gdb test_kqueue test_msilib test_ossaudiodev
+    test_readline test_smtpnet test_socketserver test_sqlite
+    test_startfile test_tcl test_timeout test_tk test_ttk_guionly
+    test_ttk_textonly test_urllib2net test_urllibnet test_winreg
+    test_winsound test_xmlrpc_net test_zipfile64
+8 skips unexpected on linux2:
+    test_bz2 test_dbm_gnu test_dbm_ndbm test_readline test_tcl test_tk
+    test_ttk_guionly test_ttk_textonly
+Makefile:812: recipe for target 'test' failed
+make: *** [test] Error 1
+
+
+Next step (after fixing this) would be
+  not this: sudo make install
+  but this: sudo make altinstall
+
+
+
+
+
+autoenv
+virtualenv
+virtualenvwrapper
+
+virtualenv tutorial: http://www.simononsoftware.com/virtualenv-tutorial-part-2/
+
+direnv ?
+easy_install ?
+
+
+pyenv-installer
+pyenv
+
+PYTHONPATH
+
