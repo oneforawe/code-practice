@@ -64,14 +64,16 @@
         data structure.
 
     array
-      - a linearly-ordered collection of elements (ie, "values"), where the
-        elements are independent in the general case, they are labeled/indexed
-        by consecutive (non-negative integer) numbers (for us, starting at
-        zero) for retrieval of each value by index (like finding a house by its
-        address), and the number of elements in the array is called the length
-        or size of the array.  An empty array, with no elements, has size/
-        length zero.  An array with length L > 0 will have indices running from
-        zero to L-1; so for L=5: the index values are 0, 1, 2, 3, 4.
+      - a data structure that uses a contiguous section of memory to host a
+        list of data, where the list is a linearly-ordered collection of
+        elements (ie, "values"), the elements are independent in the general
+        case, they are labeled/indexed by consecutive (non-negative integer)
+        numbers (for us, starting at zero) for retrieval of each value by index
+        (like finding a house by its address), and the number of elements in
+        the array is called the length or size of the array.  An empty array,
+        with no elements, has size/length zero.  An array with length L > 0
+        will have indices running from zero to L-1; so for L=5: the index
+        values are 0, 1, 2, 3, 4.
 
       - I'll call the zero-index position the "start" position, although it
         could be called the head, front, top, bottom, etc.  I'll call the
@@ -85,6 +87,11 @@
         collected).  I call this dynamism feature an "extension" to the
         foundational array concept, so the functions or "methods" that
         implement this feature are called "extenders".
+
+      - In this implementation, I won't manually enforce data type uniformity
+        or manually handle the size of each element's memory-size portion.
+        That will be handled behind-the-scenes by the JavaScript Object
+        structure, which I use to implement the array data structure.
 
   Methods (2 main, 2 helper, 2 extender, ~2 extender-helper):
     set(i, v): Assign a value v at index i; (length of array not modified).
