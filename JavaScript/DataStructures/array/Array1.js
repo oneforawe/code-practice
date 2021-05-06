@@ -51,12 +51,13 @@
         bad if the structure needs to grow beyond that size to accomodate the
         list, because there may be memory-usage surrounding the data structure
         that prevents growing the structure beyond its assigned size without
-        over-writing other valuable data.  One way around this problem is to
-        find a new location in memory for the data structure that can
-        accomodate a larger structure, and move the whole structure to that new
-        location with a larger assigned size.  The simplest scenario, however,
-        is to stick with a set size for the data structure (and not
-        automatically handle size changes).
+        over-writing other valuable data.  One way around this problem is to be
+        flexible and enable the capacity, during usage, to find a new location
+        in memory for the data structure that can accomodate a larger
+        structure, and move the whole structure to that new location with a
+        larger assigned size.  The simplest scenario, however, is to stick with
+        a set size for the data structure (and not automatically handle size
+        changes).
 
       - In information technology / computer science, these notions described
         above seem to be the foundational notions for what is called the array
