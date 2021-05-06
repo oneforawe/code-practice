@@ -46,7 +46,7 @@
         "extension" to the foundational array concept, so the functions or
         "methods" that implement this feature are called "extenders".
 
-  Methods (2 main, 2 helper, 2 intermediate-extender, ~2 extender):
+  Methods (2 main, 2 helper, 2 extender, ~2 extender-helper):
     set(i, v): Assign a value v at index i; (length of array not modified).
                Return undefined (or throw an error if index i is invalid).
     get(i):    Get the value at index i;    (length of array not modified).
@@ -78,7 +78,9 @@
                   index i is invalid).
 
   Derivative methods (6):
-    insert, delete, push, pop, shift, unshift
+    insert, delete, push, pop, shift, unshift.
+    pop & shift    are special cases of delete.
+    push & unshift are special cases of insert.
     I also define a subroutine called shiftValues, which is used in
     insert, delete, shift, and unshift.
 
