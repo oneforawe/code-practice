@@ -1,4 +1,7 @@
 /*
+  Author: Andrew Forrester
+  E-mail: andrew@andrew-forrester.com
+
   Basic Usage:
     Enter a node REPL by executing `node` in the shell. Then execute
     `.load Queue.js` in the REPL to run the file.  (It also prints out the file
