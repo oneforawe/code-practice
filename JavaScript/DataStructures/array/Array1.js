@@ -18,27 +18,66 @@
         study of data structures and data types.
 
   Data Structure:
+    Motivation
+      - I believe we can build the notion of an array data structure from a
+        desire for quick data retrieval...
+
+      - Suppose you have a lot of data in the form of a list of elements, with
+        each element itself being a chunk of data.  One way to organize this
+        data that makes it particularly easy to quickly retrieve each element
+        is to put that data in a contiguous section of computer memory-space,
+        where each element is alloted its own portion of memory-space that is
+        the same size for all portions.  In this way, the memory address for
+        each element is a simple function of 1) the first element's address,
+        2) the place-position or index number of the element in the list, and
+        3) the (constant/uniform) memory-size alloted for each element value.
+        Such a function might look as follows (although it could be more
+        complex):
+          (memory address for index i)
+            = (memory address for index 0) + i * (memory-size for each element)
+
+      - For the data to conform to this simple constant/uniform memory
+        portioning, it might be best if each element is of the same data type,
+        so that each element is likely or guaranteed to take up the same space
+        automatically without adjustment before entry into this structure.
+
+      - Another simplifying condition is to require that the memory-space that
+        is allocated for the whole data structure not change size throughout
+        its usage.  If one expects that some of the data may change, and the
+        size of the list will shrink and/or grow, one can estimate ahead-of-
+        time the largest length that the list is likely to attain, and assign
+        a size for the data structure that can handle that largest length
+        (probably with some safety-buffer).  Once that size is set, it could be
+        bad if the structure needs to grow beyond that size to accomodate the
+        list, because there may be memory-usage surrounding the data structure
+        that prevents growing the structure beyond its assigned size without
+        over-writing other valuable data.  One way around this problem is to
+        find a new location in memory for the data structure that can
+        accomodate a larger structure, and move the whole structure to that new
+        location with a larger assigned size.  The simplest scenario, however,
+        is to stick with a set size for the data structure (and not
+        automatically handle size changes).
+
+      - In information technology / computer science, these notions described
+        above seem to be the foundational notions for what is called the array
+        data structure.
+
     array
       - a linearly-ordered collection of elements (ie, "values"), where the
-        elements are independent in the general case, where they are labeled by
-        (non-negative integer) index (for us, starting at zero) for retrieval
-        of each value by index (like finding a house by its address), and the
-        number of elements in the array is called the length or size of the
-        array.  An empty array, with no elements, has size/length zero.
+        elements are independent in the general case, they are labeled/indexed
+        by consecutive (non-negative integer) numbers (for us, starting at
+        zero) for retrieval of each value by index (like finding a house by its
+        address), and the number of elements in the array is called the length
+        or size of the array.  An empty array, with no elements, has size/
+        length zero.  An array with length L > 0 will have indices running from
+        zero to L-1; so for L=5: the index values are 0, 1, 2, 3, 4.
 
       - I'll call the zero-index position the "start" position, although it
         could be called the head, front, top, bottom, etc.  I'll call the
         maximum-index position the "end" position.
 
       - The foundational notion of an array data structure seems to be a
-        "static" or constant-size array, taking up contiguous memory in a
-        computer, making it mathematically easy to retrieve each element by
-        index because the memory address for each element is thus a simple
-        function of the "start" element address, the index, and the (constant/
-        uniform) memory-size alloted for each element value.  Such a function
-        might look as follows (although it could be more complex):
-          (memory address for index i)
-            = (memory address for index 0) + i * (memory-size for each element)
+        "static" or constant-size array, as described above in the Motivation.
 
       - Arrays can also be "dynamic", where the size of the array can be
         changed as it is in use (between being declared and deleted or garbage-
@@ -84,6 +123,22 @@
     I also define a subroutine called shiftValues, which is used in
     insert, delete, shift, and unshift.
 
+  Bonus methods:
+    Beyond the scope of the basic data structure, one can create many
+    additional useful methods (custom or built-in for a language), such as:
+      reverse (reverse the order of the elements),
+      shuffle (randomly mix the order of the elements),
+      sort    (re-order the elements according to some ordering relation),
+      find    (test to find if some element obeys a condition, return element),
+      some    (test to find if some element obeys a condition, return boolean),
+      slice   (return a sub-array from within the array),
+      splice  (a delete-insert-combo method, enable inserting sub-arrays, etc),
+      filter  (filter out certain elements according to some condition),
+      map     (apply a transformation, element-wise, to create a new array),
+      reduce  (apply a transformation, iteratively across all elements),
+      concat  (attach two arrays end-to-end to create a new array),
+      etc
+
   Error-handling:
     I created some functions to handle UserExceptions: bad inputs from users.
 
@@ -96,7 +151,8 @@
     In this implementation, a native JavaScript Object structure is used to
     instantiate the kind of array data structure that's described above.
     Another property, this.end, which is the last index in the array (equal to
-    this.length - 1) is defined for conceptual simplicity.
+    this.length - 1) is defined for conceptual simplicity.  This code is not
+    optimized for speed; it is written for conceptual clarity.
 */
 
 
@@ -195,12 +251,12 @@ class SimpleArray {
   shiftValues = (index, forward) => {
     if (forward) { // to overwrite at index (and then delete at end)
       for (let i = index; i < this.end; i++) {
-        this.set(i, this.get[i+1]);
+        this.set(i, this.get(i+1));
       }
     }
     else { // backward, to make room at index (for then setting value)
       for (let i = this.end; i > index; i--) {
-        this.set(i, this.get[i-1]);
+        this.set(i, this.get(i-1));
       }
     }
   }
