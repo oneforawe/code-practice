@@ -48,9 +48,9 @@
 
   Methods (2 main, 2 helper, 2 intermediate-extender, ~2 extender):
     set(i, v): Assign a value v at index i; (length of array not modified).
-               Return undefined (or throw an error if index i is invalid).
+               Returns undefined (but if unsuccessful, prints error message).
     get(i):    Get the value at index i;    (length of array not modified).
-               Return that value (and undefined for non-existent elements).
+               Return that value.
 
     length:  Return the number of elements in the array (without modification).
     search(v):  Search for the first element with value v; if there is such an
@@ -59,28 +59,23 @@
                 elements. Aka indicesOf(v).)
 
     lengthen(): Increase the number of elements in the array by one.
-                Return the new length of the array.
                 In another formulation, this could take an input for how many
                 elements to add, or it could be size dependent (say, doubling
                 the length of the array when increasing beyond its current
                 limit, which would be a power of two).
     shorten():  Decrease the number of elements in the array, analogously to
-                lengthen().  Return the new length of the array.
+                lengthen().
 
-    insert(i, v): Add a new element (by lengthening the array by one and
-                  shifting other elements if necessary to make room in the
-                  appropriate location) with value v at index i.
-                  Return the new length of the array (or throw an error if
-                  index i is invalid).
-    delete(i):    Remove the element at index i (by shifting elements if
-                  necessary and shortening the array by one).
-                  Return the new length of the array (or throw an error if
-                  index i is invalid).
+    insert(i, v): Add a new element (by lengthening the array and shifting
+                  other elements if necessary to make room in the appropriate
+                  location) with value v at index i.
+    delete(i):  Remove the element at index i (by shortening the array and
+                shifting elements if necessary).
 
   Derivative methods (6):
     insert, delete, push, pop, shift, unshift
-    I also define a subroutine called shiftValues, which is used in
-    insert, delete, shift, and unshift.
+    I also define a subroutine called shiftValues, which is used in insert,
+    delete, shift, and unshift.
 
   Error-handling:
     I created some functions to handle UserExceptions: bad inputs from users.
@@ -100,7 +95,7 @@
 
 function UserException(message) {
   this.message = message;
-  this.name = 'InvalidIndex';
+  this.name = 'UserException';
 }
 
 
@@ -118,7 +113,10 @@ class SimpleArray {
  
   // Only set values for already-existing already-defined element spaces.
   set = (index, value) => {
-    if (!this.validIndexInputForArray(index)) this.throwIndexForArrayError();
+    if (!this.validIndexInputForArray(index)) {
+      let error = this.handleIndexForArrayError();
+      return error.name;
+    }
     this.data[index] = value;
   }
 
@@ -147,7 +145,10 @@ class SimpleArray {
   }
 
   insert = (index, value) => {
-    if (!this.validIndexInputForInsert(index)) this.throwIndexForInsertError();
+    if (!this.validIndexInputForInsert(index)) {
+      let error = this.handleIndexForInsertError();
+      return error.name;
+    }
     this.lengthen();
     this.shiftValues(index, false);
     this.set(index, value);
@@ -155,10 +156,12 @@ class SimpleArray {
   }
 
   delete = (index) => {
-    if (!this.validIndexInputForArray(index)) this.throwIndexForArrayError();
+    if (!this.validIndexInputForArray(index)) {
+      let error = this.handleIndexForArrayError();
+      return error.name;
+    }
     this.shiftValues(index, true);
-    this.shorten();
-    return this.length;
+    return this.shorten();
   }
 
   // special case of insert: insert at end
@@ -211,29 +214,30 @@ class SimpleArray {
   }
 
   throwIndexForArrayError = () => {
-    throw new UserException('The input for `index` must be a non-negative ' +
+    return new UserException('The input for `index` must be a non-negative ' +
       'integer within the bounds of the referenced array.');
   }
 
   throwIndexForInsertError = () => {
-    throw new UserException('For the `insert` method, the input for ' +
+    return new UserException('For the `insert` method, the input for ' +
       '`index` must be a non-negative integer within the bounds of the ' +
       'referenced array or just one beyond the maximum index.');
   }
 
+  handleIndexForArrayError = () => {
+    try { throw this.throwIndexForArrayError(); }
+    catch (error) {
+      console.error(`\n  ${error.name} : ${error.message}\n`);
+      return error;
+    };
+  }
+
+  handleIndexForInsertError = () => {
+    try { throw this.throwIndexForInsertError(); }
+    catch (error) {
+      console.error(`\n  ${error.name} : ${error.message}\n`);
+      return error;
+    };
+  }
+
 }
-
-
-/* To use the following code, uncomment below and execute `node Array1.js` in
-the shell. */
-
-// const testSimpleArrayErrorHandling = () => {
-//   let arr = new SimpleArray(8);
-//   arr.set(1, 'a');
-//   console.log(`So I can set arr at index=1 to be: arr.get(1) = ${arr.get(1)}`);
-//   console.log('But let\'s try setting a non-existent element\'s value...');
-//   arr.set(10, 'b');
-//   console.log('Do I make it this far? No.');
-// }
-
-// testMyArrayStuff();
