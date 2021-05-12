@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Amaze Balls!</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="A keyboard-controlled one-player maze game.">
+    <meta name="keywords" content="game, maze, single-player, one-player, keyboard">
+    <meta name="author" content="Andrew Forrester">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script
+      id="for-game-engine"
+      src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.14.2/matter.min.js">
+    </script>
+    <link
+      id="for-icons"
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
+    />
+    <link
+      id="for-remaining-style-choices"
+      rel="stylesheet"
+      href="style.css"
+    />
+  </head>
+  <body>
+    <div class="menu-link"><i class="clicky fas fa-bars"></i></div>
+    <div class="help-link"><i class="clicky fas fa-info-circle"></i></div>
+    <div class="game-space">
+      <div class="game-action-container">
+        <div class="help-info vertical-center top-box">
+          <i class="clicky fas fa-window-close" tabindex="0"></i>
+          <div class="horizontal-center">
+            <h1 class="title stack">Amaze Balls!</h1>
+          </div>
+          <div class="horizontal-center bottom-space">
+            <div class="table">
+              <div class="table-row">
+                <div class="table-cell category">Motion:</div>
+                <div class="table-cell">Use arrow keys (or Vim keys: h, j, k, l).</div>
+              </div>
+              <div class="table-row">
+                <div class="table-cell category">Goal:</div>
+                <div class="table-cell">Go get that red ball.</div>
+              </div>
+              <div class="table-row">
+                <div class="table-cell category">Help Info:</div>
+                <div class="table-cell">Click on <i class="fas fa-info-circle inline"></i> to the top-right (or press 'i').</div>
+              </div>
+              <div class="table-row">
+                <div class="table-cell category">Game Controls:</div>
+                <div class="table-cell">Click on <i class="fas fa-bars inline"></i> to the top-left (or press 'c').</div>
+              </div>
+              <div class="table-row">
+                <div class="table-cell category">Other Keys:</div>
+                <div class="table-cell">Controls-toggle: tab; Close box: x, escape.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="menu-controls vertical-center top-box hidden">
+          <i class="clicky fas fa-window-close" tabindex="0"></i>
+          <div class="horizontal-center">
+            <h1 class="title stack">Game Controls</h1>
+          </div>
+          <div class="horizontal-center bottom-space">
+            <div class="control-container">
+              <div class="horizontal-center">
+                <button class="restart horizontal-center stack">Restart Game</button>
+              </div>
+              <div class="horizontal-center">
+              <button class="new-game horizontal-center stack">Generate New Game</button>
+              </div>
+              <div class="stack">
+                <div class="horizontal-center">
+                  <label for="complexity">Complexity:</label>
+                  <input type="text" size="2" value="10" class="spaced"></input> (3-50)
+                </div>
+                <div class="horizontal-center">(number of columns)</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="win-message vertical-center horizontal-center hidden"><h1 class="win">You win!</h1></div>
+      </div>
+    </div>
+    <script src="f1_variables.js"></script>
+    <script src="f2_functions_html.js"></script>
+    <script src="f3_functions_Blueprint.js"></script>
+    <script src="f4_functions_AddRemove.js"></script>
+    <script src="f5_build_world.js"></script>
+    <script src="f6_events_actions.js"></script>
+    <script src="f7_game_start.js"></script>
+  </body>
+</html>

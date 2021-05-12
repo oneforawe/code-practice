@@ -1,0 +1,157 @@
+:root {
+  --margin: 80px;
+  --wall-color: LimeGreen;
+  --sprite-color: Gold;
+  --goal-color: DarkRed;
+}
+
+body {
+  margin: 0;
+  background-color: black;
+}
+
+.hidden {
+  visibility: hidden;
+}
+.vertical-center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.stack {
+  display: block;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10pt;
+  margin-bottom: 5pt;
+}
+.horizontal-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.spaced {
+  margin-left: 10pt;
+  margin-right: 5pt;
+  margin-bottom: 5pt;
+}
+
+.game-space {
+  z-index: -1;
+  margin: var(--margin) var(--margin) 0 var(--margin);
+  width: calc(100vw - calc(2 * var(--margin)));
+  background-color: black;
+  display: flex;
+  align-items: top;
+  justify-content: center;
+}
+.game-action-container {
+  z-index: 0;
+  position: relative;
+  display: flex;
+  align-items: top;
+  justify-content: center;
+}
+
+.menu-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: var(--margin);
+  height: var(--margin);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.menu-link .fa-bars {
+  color: DimGray;
+  font-size: 40px;
+}
+
+.help-link {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: var(--margin);
+  height: var(--margin);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.help-link .fa-info-circle {
+  color: DimGray;
+  font-size: 40px;
+}
+
+.fa-window-close {
+  margin-top: -2px;
+  color: DimGray;
+  font-size: 30px;
+}
+
+.top-box {
+  margin: auto;
+  display: block;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  border: 5pt solid white;
+  background-color: black;
+  opacity: 75%;
+}
+.bottom-space {
+  margin-bottom: 40px;
+}
+
+.menu-controls {
+  z-index: 2;
+}
+.title {
+  margin-left: 20pt;
+  margin-right: 20pt;
+  text-align: center;
+}
+
+.help-info {
+  z-index: 3;
+}
+.table {
+  display: table;
+  border-spacing: 5pt;
+  margin-left: 20pt;
+  margin-right: 20pt;
+}
+.table-row {
+  display: table-row;
+}
+.table-cell {
+  display: table-cell;
+}
+.category {
+  padding-right: 10px;
+  text-align: right;
+  font-weight: bold;
+}
+.inline {
+  margin: 0 5px;
+}
+
+.win-message {
+  z-index: 1;
+}
+
+.win {
+  color: var(--wall-color);
+  font-size: 180pt;
+  font-weight: bold;
+  text-align: center;
+}
+
+i.clicky {
+  cursor: pointer !important;
+}
+button {
+  cursor: pointer;
+}
