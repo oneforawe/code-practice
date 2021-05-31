@@ -1,7 +1,7 @@
 import {createStore} from 'redux';
 import {secInMS, minInMS, hourInMS} from './date-utilities';
 
- 
+
 export const timeTypes = ['local-standard-time', 'non-local-time'];
 export const timeSpeeds = ['zero-speed', 'normal-speed', 'double-speed'];
 export const timeUnits = ['sec', 'min', 'hour'];
@@ -180,21 +180,15 @@ const reducer = (state = stateInitial, action) => {
         switch (action.unit) {
           case timeUnits[0]:
             timeDisplay = new Date(state.timeDisplay);
-            timeDisplay = new Date (timeDisplay.setSeconds(0));
-            timeDspRef = new Date (state.timeDspRef);
-            timeDspRef = new Date (timeDspRef.setSeconds(0));
+            timeDspRef = new Date(state.timeDspRef);
             break;
           case timeUnits[1]:
-            timeDisplay = new Date (state.timeDisplay);
-            timeDisplay = new Date (timeDisplay.setMinutes(0));
-            timeDspRef = new Date (state.timeDspRef);
-            timeDspRef = new Date (timeDspRef.setMinutes(0));
+            timeDisplay = new Date(state.timeDisplay);
+            timeDspRef = new Date(state.timeDspRef);
             break;
           case timeUnits[2]:
-            timeDisplay = new Date (state.timeDisplay);
-            timeDisplay = new Date (timeDisplay.setHours(0));
-            timeDspRef = new Date (state.timeDspRef);
-            timeDspRef = new Date (timeDspRef.setHours(0));
+            timeDisplay = new Date(state.timeDisplay);
+            timeDspRef = new Date(state.timeDspRef);
             break;
           default:
             console.log(`Need an appropriate value of action.unit, ` +
