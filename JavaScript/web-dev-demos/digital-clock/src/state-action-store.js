@@ -166,7 +166,7 @@ const reducer = (state = stateInitial, action) => {
 
     case MOD_DISPLAY:
       let timeDspRef, timeOffsetChange;
-      if (action.direction) {
+      if (action.direction) {  // if direction = 1 or -1
         millisecondsChange = action.direction * conversionToMS[action.unit];
         timeDisplay = new Date(
           state.timeDisplay[Symbol.toPrimitive]('number') + millisecondsChange
@@ -176,19 +176,25 @@ const reducer = (state = stateInitial, action) => {
         );
         timeOffset = state.timeOffset + millisecondsChange;
       }
-      else {
+      else {  // if direction = 0
         switch (action.unit) {
           case timeUnits[0]:
             timeDisplay = new Date(state.timeDisplay);
+            timeDisplay = new Date(timeDisplay.setSeconds(0));
             timeDspRef = new Date(state.timeDspRef);
+            timeDspRef = new Date(timeDspRef.setSeconds(0));
             break;
           case timeUnits[1]:
             timeDisplay = new Date(state.timeDisplay);
+            timeDisplay = new Date(timeDisplay.setMinutes(0));
             timeDspRef = new Date(state.timeDspRef);
+            timeDspRef = new Date(timeDspRef.setMinutes(0));
             break;
           case timeUnits[2]:
             timeDisplay = new Date(state.timeDisplay);
+            timeDisplay = new Date(timeDisplay.setHours(0));
             timeDspRef = new Date(state.timeDspRef);
+            timeDspRef = new Date(timeDspRef.setHours(0));
             break;
           default:
             console.log(`Need an appropriate value of action.unit, ` +
