@@ -4,6 +4,9 @@
 # Mac Desktop Services Store customization files
 .DS_Store
 
+# General folders
+node_modules/
+
 # Specific sub-folders
 Anglican
 Bash
