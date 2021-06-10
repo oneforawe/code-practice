@@ -1,5 +1,9 @@
 import moment from 'moment'
 import mtimezone from 'moment-timezone'
+/**
+ * Note: When using moment-timezone in the browser, you will need to load the
+ * data as well as the library.
+ */
 
 
 // export const  secInMS = 1000;         // one second in milliseconds
@@ -111,6 +115,15 @@ export function localTimeStamp(dateObj) {
   return `` +
     `${moment(dateObj).format(`` +
       `YYYY-MM-DD[T]HH:mm:ss.SSS (UTCZ|[${localTimeZoneModeAbbr}]) x`
+      )}`
+}
+
+export function localTimeStampWithDay(dateObj) {
+  const localTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone
+  const localTimeZoneModeAbbr = mtimezone.tz(dateObj,localTimeZone).format('z')
+  return `` +
+    `${moment(dateObj).format(`` +
+      `YYYY-MM-DD[T]HH:mm:ss.SSS ddd (UTCZ|[${localTimeZoneModeAbbr}]) x`
       )}`
 }
 

@@ -1,10 +1,18 @@
-import moment from 'moment'
+#!/usr/bin/env node
 /**
- * Note: When using moment-timezone in the browser, you will need to load the
- * data as well as the library.
+ * Filename: date.js
+ * Language: JavaScript / ECMAScript
+ * Author:   Andrew Forrester <andrew@andrew-forrester.com>
+ *
+ * Basic Usage: Execute in a shell `node date.js`
+ *
+ * TODO: Should probably not use `moment`; even their website suggests it.
  */
+
+
+import moment from 'moment'
 import {localTimeStamp,
-  localTimeStampShort, localTimeStampLong,
+  localTimeStampShort, localTimeStampLong, localTimeStampWithDay,
   localTimeStampA, localTimeStampB} from './date-utilities.js'
 
 
@@ -144,6 +152,8 @@ log(localTimeStampLong(date))
 log('')
 log(moment(date).format(`YYYY-MM-DD[T]HH:mm:ss.SSS (UTCZ|[${localTimeZoneModeAbbr}]) x`))
 log(localTimeStamp(date))
+log('')
+log(localTimeStampWithDay(date))
 // https://momentjscom.readthedocs.io/en/latest/moment/04-displaying/01-format/
 
 
@@ -168,6 +178,18 @@ printCategory('Unix Time (in seconds, standard)')
 log(date.getTime()/1000)
 log(moment(date).format('X'))
 
+
+/*****************************************************************************/
+printCategory('Timestamp Translation')
+
+// timestamp string style from output of localTimeStamp():
+const date1 = '2021-06-10T15:21:34.434 (UTC-07:00|PDT) 1623363694434'
+const unixTime1 = date1.split(' ')[2]
+const date2 = new Date(parseInt(unixTime1)).toString()
+
+console.log(`Initial custom timestamp string: ${date1}`)
+console.log(`Parse out the unix time in milliseconds...`)
+console.log(`and translate using \`new Date()\`: ${date2}`)
 
 
 
