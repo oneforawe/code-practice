@@ -1,11 +1,11 @@
 #!/usr/bin/env node
-/*
+/**
  * Filename: promises-demo.js
  * Language: JavaScript / ECMAScript
  * Author:   Andrew Forrester <andrew@andrew-forrester.com>
  *
  * Basic Usage: Execute in a shell `node promises-demo.js`
-*/
+ */
 
 import chalk from 'chalk'
 //const chalk = require('chalk')
