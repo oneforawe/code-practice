@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 /*
-  Filename: promises-demo.js
-  Author:   Andrew Forrester
-  E-mail:   andrew@andrew-forrester.com
-
-  Basic Usage: Execute `node promises-demo.js`
+ * Filename: promises-demo.js
+ * Language: JavaScript / ECMAScript
+ * Author:   Andrew Forrester <andrew@andrew-forrester.com>
+ *
+ * Basic Usage: Execute in a shell `node promises-demo.js`
 */
 
 import chalk from 'chalk'
