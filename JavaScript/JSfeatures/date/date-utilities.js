@@ -143,7 +143,6 @@ export function localTimeStampLong(dateObj) {
       `(UTCZ | [${localTimeZone}] | [${localTimeZoneMode}]) x`)}`
 }
 
-
 export function localTimeStampA(dateObj) {
   return `` +
     `${dateObj.toLocaleString("default", { year:  "numeric" })}-` +
@@ -175,4 +174,36 @@ export function localTimeStampB(dateObj) {
     `${dateObj.getMinutes()}:` +
     `${dateObj.getSeconds()}.` +
     `${dateObj.getMilliseconds()}`
+}
+
+export function shortDashDate(date) {
+  // date can be a dateObj or a dateStamp string
+  return `${moment(date).format(`YYYY-MM-DD`)}`
+}
+
+export function shortSlashDate(date) {
+  // date can be a dateObj or a dateStamp string
+  return `${moment(date).format(`YYYY/MM/DD`)}`
+}
+
+export function convertDayToWeekday(stringDay) {
+  const dateObj = new Date(stringDay) // `stringDay` of the form '05/15/2021'
+  const weekday = moment(dateObj).format('ddd') // `weekday` of the form 'Sat'
+  return weekday
+}
+
+export function shortDashDateUTC(date) {
+  // date can be a dateObj or a dateStamp string
+  return `${moment.utc(date).format(`YYYY-MM-DD`)}`
+}
+
+export function shortSlashDateUTC(date) {
+  // date can be a dateObj or a dateStamp string
+  return `${moment.utc(date).format(`YYYY/MM/DD`)}`
+}
+
+export function convertDayToWeekdayUTC(stringDay) {
+  const dateObj = new Date(stringDay) // `stringDay` of the form '05/15/2021'
+  const weekday = moment.utc(dateObj).format('ddd') // `weekday` of the form 'Sat'
+  return weekday
 }

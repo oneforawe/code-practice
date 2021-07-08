@@ -13,7 +13,10 @@
 import moment from 'moment'
 import {localTimeStamp,
   localTimeStampShort, localTimeStampLong, localTimeStampWithDay,
-  localTimeStampA, localTimeStampB} from './date-utilities.js'
+  localTimeStampA, localTimeStampB,
+  shortDashDate, shortSlashDate, convertDayToWeekday,
+  shortDashDateUTC, shortSlashDateUTC, convertDayToWeekdayUTC,
+} from './date-utilities.js'
 
 
 let log = console.log
@@ -81,9 +84,9 @@ log(`             dateZeroE                  = ${dateZeroE}`)
 printCategory('Common Date Methods')
 
 // Feel free to switch between these three and check out any differences
-const timeString = localTimeStampShort(new Date())
+//const timeString = localTimeStampShort(new Date())
 //const timeString = '1999-12-31 23:59:59.999' // Pacific Standard Time
-//const timeString = '1999-06-30 23:59:59.999' //  Pacific Daylight Time
+const timeString = '1999-06-30 23:59:59.999' //  Pacific Daylight Time
 
 log(`timeString: ${timeString}`)
 log(`const date = new Date(timeString)`)
@@ -154,6 +157,11 @@ log(moment(date).format(`YYYY-MM-DD[T]HH:mm:ss.SSS (UTCZ|[${localTimeZoneModeAbb
 log(localTimeStamp(date))
 log('')
 log(localTimeStampWithDay(date))
+log('')
+log(date.toLocaleDateString())
+log(shortDashDate(date))
+log(shortSlashDate(date))
+log(convertDayToWeekday(date))
 // https://momentjscom.readthedocs.io/en/latest/moment/04-displaying/01-format/
 
 
@@ -163,6 +171,10 @@ printCategory('UTC / ISO Time')
 log(date.toUTCString())
 log(date.toGMTString())
 log(date.toISOString())
+log('')
+log(shortDashDateUTC(date))// same: log(shortSlashDateUTC(date.toISOString()))
+log(shortSlashDateUTC(date))// same: log(shortSlashDateUTC(date.toISOString()))
+log(convertDayToWeekdayUTC(date))
 
 
 /*****************************************************************************/
