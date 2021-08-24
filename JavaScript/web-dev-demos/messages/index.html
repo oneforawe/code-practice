@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Thin Veil</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="A simple insecure encoder-decoder.">
+    <meta name="keywords" content="secret message, messaging, encode, decode">
+    <meta name="author" content="Andrew Forrester">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      id="for-imported-style"
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    </link>
+    <style>
+      .row { margin-top: 10vh; }
+      #message { margin-top: 0; }
+      #title { margin-bottom: 0; font-weight: bold; }
+      .other-color { color: #673ab7; }
+      #subtitle { margin-top: 0; color: DimGrey; }
+      .family { font-family: "Lucida Console", "Courier New", monospace; text-align: center; }
+    </style>
+  </head>
+  <body>
+    <div class="horizontal-center">
+      <h1 id="title" class="family"><a href="./index.html" class="other-color">Thin Veil</a></h1>
+      <h3 id="subtitle" class="family">insecure secret messages</h2>
+    </div>
+    <div class="row">
+      <div class="col s8 offset-s2 deep-purple lighten-3">
+        <div id="input-card" class="card-panel">
+          <form>
+            <label for="message-input">Enter a secret message to (insecurely) encode:</label>
+            <input id="message-input" />
+            <button class="btn">Create link</button>
+          </form>
+        </div>
+        <div id="link-card" class="card-panel hide">
+          <form>
+            <label for="link-output">Share this link with a friend:</label>
+            <input id="link-output" />
+            <label for="link-output">(Or, better, share two pieces of the link separately at different times: 1) the ending "hash" string, which is the encoded message; and 2) the portion prior to the hash, which is the location of this encoding/decoding app.  The friend must know to put the two portions together to get the complete URL to see the decoded secret message.  Note: it might requre a refresh of the page.)</label>
+          </form>
+        </div>
+        <div id="message-card" class="card-panel hide">
+          <h1 id="message"></h1>
+          <div><a href="./index.html">Create your own secret message.</a></div>
+        </div>
+      </div>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
