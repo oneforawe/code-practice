@@ -1,5 +1,22 @@
 # Basic Express App
 
+## Warning from GitHub
+
+Dependabot alerts
+* constantinople  
+  critical severity  
+  Jul 08, 2021 by GitHub  
+  JavaScript/Express/basic-express-app/package-lock.json  
+* clean-css  
+  low severity  
+  Jul 08, 2021 by GitHub  
+  JavaScript/Express/basic-express-app/package-lock.json
+
+Dependabot alerts surface known security vulnerabilities in some dependency
+manifest files. Dependabot security updates automatically keep your application
+up-to-date by updating dependencies in response to these alerts. Dependabot
+version updates can also help keep dependencies updated.
+
 
 ## Creation
 
