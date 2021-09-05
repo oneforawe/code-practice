@@ -110,7 +110,7 @@ class SimpleArray {
     this.length = lengthInitial;
     this.end = lengthInitial - 1;
   }
- 
+
   // Only set values for already-existing already-defined element spaces.
   set = (index, value) => {
     if (!this.validIndexInputForArray(index)) {

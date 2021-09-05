@@ -20,7 +20,7 @@
         in information technology / computer science, and they often vary
         across different programming languages and implementations. What
         follows is my own synthesis of what I've encountered so far in my study
- 
+
   Data Structure:
     queue
       - a "line", FIFO (first in, first out)
