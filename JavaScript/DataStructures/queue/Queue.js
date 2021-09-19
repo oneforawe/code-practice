@@ -1,6 +1,6 @@
 /*
   Author: Andrew Forrester
-  E-mail: andrew@andrew-forrester.com
+  Web:    https://www.andrew-forrester.com/
 
   Basic Usage:
     Enter a node REPL by executing `node` in the shell. Then execute

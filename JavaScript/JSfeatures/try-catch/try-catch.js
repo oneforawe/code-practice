@@ -1,8 +1,9 @@
 #!/usr/bin/env node
 /**
  * Filename:    try-catch.js
- * Author:      Andrew Forrester <andrew@andrew-forrester.com>
  * Code:        JavaScript/ECMAScript
+ * Author:      Andrew Forrester
+ * Web:         https://www.andrew-forrester.com/
  * Description: Demonstration of the JavaScript try-catch control construction.
  *
  * Notes:       Apparently, curly braces must be used, even though the language

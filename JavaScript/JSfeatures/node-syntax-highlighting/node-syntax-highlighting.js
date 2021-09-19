@@ -1,7 +1,7 @@
 /*
   Filename: node-syntax-highlighting.js
   Author:   Andrew Forrester
-  E-mail:   andrew@andrew-forrester.com
+  Web:      https://www.andrew-forrester.com/
 
   Purpose: Found this example of how to do RIDICULOUSLY MINIMAL syntax
     highlighting in node for a single word on a single line:

@@ -2,7 +2,8 @@
 /**
  * Filename: promises-demo.js
  * Language: JavaScript / ECMAScript
- * Author:   Andrew Forrester <andrew@andrew-forrester.com>
+ * Author:   Andrew Forrester
+ * Web:      https://www.andrew-forrester.com/
  *
  * Basic Usage: Execute in a shell `node promises-demo.js`
  */

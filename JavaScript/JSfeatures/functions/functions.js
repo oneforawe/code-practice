@@ -2,7 +2,7 @@
 /*
   Filename: functions.js
   Author:   Andrew Forrester
-  E-mail:   andrew@andrew-forrester.com
+  Web:      https://www.andrew-forrester.com/
 
   Basic Usage: Execute `node functions.js`
 

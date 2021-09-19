@@ -1,6 +1,6 @@
 /*
   Author: Andrew Forrester
-  E-mail: andrew@andrew-forrester.com
+  Web:    https://www.andrew-forrester.com/
 
   Basic Usage: Enter a Node.js REPL by executing `node` in the shell. Then
     execute `.load Array1.js` in the REPL to run the file. (It also prints out
