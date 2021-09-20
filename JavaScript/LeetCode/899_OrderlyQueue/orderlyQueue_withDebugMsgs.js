@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 // filename: orderlyQueue.js
 // purpose: Solve leetcode problem 899 "Orderly Queue".
+// https://leetcode.com/problems/orderly-queue/
 
 /**
  * 899. Orderly Queue
@@ -47,6 +48,7 @@
  *    ordering of strings, which one could consider to be the "smallest" or
  *    "lowest" (or even "highest") or "earliest" or front-most / foremost
  *    position (that is, closest to the fore / front).
+ *      s = string,   k = depth of reach for stipulated string manipulation
  * 1) k=1 is just cycling
  * 2) k>1 is isomorphic to arbitrary sort (& can deploy a builtin string sort)
  * 3) For k=1, to find the "foremost" cycle, note that if there is only one
@@ -290,7 +292,3 @@ console.log(`string = ${string}, k = ${k}`)
 getForemostTransform(string, k)
 console.log('Answer should be abcabz')
 console.log('')
-
-
-
-module.exports = { getForemostTransform }
