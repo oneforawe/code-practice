@@ -100,9 +100,9 @@ function findTwoSumPairC(target, nums) {
 
 
 solutionProposals = [
-    { name: "findTwoSumPairA", func: findTwoSumPairA },
-    { name: "findTwoSumPairB", func: findTwoSumPairB },
-    { name: "findTwoSumPairC", func: findTwoSumPairC },
+  { name: "findTwoSumPairA", func: findTwoSumPairA },
+  { name: "findTwoSumPairB", func: findTwoSumPairB },
+  { name: "findTwoSumPairC", func: findTwoSumPairC },
 ]
 
 module.exports = solutionProposals
