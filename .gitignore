@@ -8,14 +8,15 @@
 node_modules/
 
 # Specific sub-folders
-Anglican
-Bash
-CSS
-CodeWars
-CrackingCodeInterview
-JavaScript/Courses
-ProjEuler
-Python/Noisebridge
+Anglican/
+Bash/
+CSS/
+CodeWars/
+CrackingCodeInterview/
+JavaScript/Courses/
+TypeScript/Courses/
+ProjEuler/
+Python/Noisebridge/
 
 # Specific files
 LeetCode/Problems_for_Companies.txt
