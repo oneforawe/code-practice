@@ -1,0 +1,16 @@
+{
+  "name": "type-construction",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/typeContruction.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "typescript": "^4.5.4"
+  }
+}

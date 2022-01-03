@@ -6,6 +6,7 @@
 
 # General folders
 node_modules/
+Courses/
 
 # Specific sub-folders
 Anglican/
@@ -13,8 +14,6 @@ Bash/
 CSS/
 CodeWars/
 CrackingCodeInterview/
-JavaScript/Courses/
-TypeScript/Courses/
 ProjEuler/
 Python/Noisebridge/
 
