@@ -167,11 +167,11 @@ log(convertDayToWeekday(date))
 
 
 /*****************************************************************************/
-printCategory('UTC / ISO Time')
+printCategory('UTC / ISO / GMT Time')
 
-log(date.toUTCString())
-log(date.toGMTString())
-log(date.toISOString())
+log('UTC:', date.toUTCString())
+log('ISO:', date.toISOString())
+log('GMT:', date.toGMTString())
 log('')
 log(shortDashDateUTC(date))// same: log(shortSlashDateUTC(date.toISOString()))
 log(shortSlashDateUTC(date))// same: log(shortSlashDateUTC(date.toISOString()))
