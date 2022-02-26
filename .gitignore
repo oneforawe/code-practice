@@ -6,6 +6,7 @@
 
 # General folders
 node_modules/
+lib/
 Courses/
 
 # Specific sub-folders
