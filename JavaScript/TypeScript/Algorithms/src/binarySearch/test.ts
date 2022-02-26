@@ -15,7 +15,7 @@ function testSolution(
 ) {
   const { input, retVal } = validationItem
   it(`test: ${solutionItem.name} (validation ${validationIdx})`, () => {
-    assert.deepStrictEqual(solutionItem.func(...input), retVal)
+    assert.deepStrictEqual(solutionItem.func(input), retVal)
   })
 }
 

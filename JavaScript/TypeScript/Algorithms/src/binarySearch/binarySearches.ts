@@ -37,22 +37,27 @@ export const binarySearchForItem = (
 
 
 
-type TestFunction = (item: any) => boolean;
+type Item = any;
+type List = Array<Item>;
+//type Index = number;
+
+type TestFunctionInputs = { index: Index, list: List };
+type TestFunction = (params: TestFunctionInputs) => boolean;
+
+type HeadExtreme = 'headwardmost' | 'low-index';
+type TailExtreme = 'tailwardmost' | 'high-index';
 
 export type BinarySearchForBoundaryInputs = {
-  list: Array<any>,
+  list: List,
   testFunction: TestFunction,
   bool: boolean,
-  preference: 'headwardmost' | 'tailwardmost' | 'low-index' | 'high-index',
+  preference: HeadExtreme | TailExtreme,
 };
 
 export type BinarySearchForBoundaryReturn = Index | null;
 
 export type BinarySearchForBoundary = (
-  list: Array<any>,
-  testFunction: TestFunction,
-  bool: boolean,
-  preference: 'headwardmost' | 'tailwardmost' | 'low-index' | 'high-index',
+  params: BinarySearchForBoundaryInputs
 ) => Index | null;
 
 /**
@@ -67,12 +72,9 @@ export type BinarySearchForBoundary = (
  * is chosen.  And preferring a headwardmost or tailwardmost item determines
  * which item is chosen if the test function is constant across the whole list.
  */
-export const binarySearchForBoundary: BinarySearchForBoundary = (
-  list: Array<any>,
-  testFunction: TestFunction,
-  bool: boolean,
-  preference: 'headwardmost' | 'tailwardmost' | 'low-index' | 'high-index',
-): Index | null => {
+export const binarySearchForBoundary: BinarySearchForBoundary = (params) => {
+
+  const { list, testFunction, bool, preference } = params;
 
   let prefer: 'low' | 'high';
   switch (preference) {
@@ -87,10 +89,10 @@ export const binarySearchForBoundary: BinarySearchForBoundary = (
   }
 
   let low: Index = 0;
-  let lowBool = testFunction(list[low]);
+  let lowBool = testFunction({ index: low, list });
 
   let high: Index = list.length - 1;
-  let highBool = testFunction(list[high]);
+  let highBool = testFunction({ index: high, list });
 
   /**
    * Boundary cases of this problem (ironically *not* dealing with the
@@ -115,7 +117,7 @@ export const binarySearchForBoundary: BinarySearchForBoundary = (
     // low = nope (too low) ; high = potential
     while (low !== high - 1) {
       const mid = Math.floor((low + high) / 2);
-      const midBool = testFunction(list[mid]);
+      const midBool = testFunction({ index: mid, list });
       if (midBool === bool) {
         // mid is a new potential (so `high` index is too high -- adjust it).
         high = mid;
@@ -132,7 +134,7 @@ export const binarySearchForBoundary: BinarySearchForBoundary = (
     // low = potential ; high = nope (too high)
     while (low !== high - 1) {
       const mid = Math.ceil((low + high) / 2);
-      const midBool = testFunction(list[mid]);
+      const midBool = testFunction({ index: mid, list });
       if (midBool === bool) {
         // mid is a new potential (so `low` index is too low -- adjust it).
         low = mid;

@@ -4,12 +4,7 @@ import {
 } from './binarySearches';
 
 export type ValidationItem = {
-  input: [
-    BinarySearchForBoundaryInputs['list'],
-    BinarySearchForBoundaryInputs['testFunction'],
-    BinarySearchForBoundaryInputs['bool'],
-    BinarySearchForBoundaryInputs['preference'],
-  ],
+  input:  BinarySearchForBoundaryInputs,
   retVal: BinarySearchForBoundaryReturn,
 };
 
@@ -17,84 +12,84 @@ type ValidationItems = Array<ValidationItem>;
 
 export const validationItems: ValidationItems = [
   {
-    input: [
-      [ 1, 2, 2, 2, 2, 3, 4, 5 ],
-      (x: number) => (x < 3),
-      true,
-      'tailwardmost'
-    ],
+    input: {
+      list: [ 1, 2, 2, 2, 2, 3, 4, 5 ],
+      testFunction: ({ index, list }) => (list[index] < 3),
+      bool: true,
+      preference: 'tailwardmost',
+    },
     retVal: 4,
   },
   {
-    input: [
-      [ 1, 2, 2, 2, 2, 3, 4, 5 ],
-      (x: number) => (x < 3),
-      true,
-      'headwardmost'
-    ],
+    input: {
+      list: [ 1, 2, 2, 2, 2, 3, 4, 5 ],
+      testFunction: ({ index, list }) => (list[index] < 3),
+      bool: true,
+      preference: 'headwardmost',
+    },
     retVal: 0,
   },
   {
-    input: [
-      [ 1, 2, 2, 2, 2, 3, 4, 5 ],
-      (x: number) => (x > 3),
-      true,
-      'headwardmost'
-    ],
+    input: {
+      list: [ 1, 2, 2, 2, 2, 3, 4, 5 ],
+      testFunction: ({ index, list }) => (list[index] > 3),
+      bool: true,
+      preference: 'headwardmost',
+    },
     retVal: 6,
   },
   {
-    input: [
-      [ 1, 2, 2, 2, 2, 3, 4, 5 ],
-      (x: number) => (x > 3),
-      true,
-      'tailwardmost'
-    ],
+    input: {
+      list: [ 1, 2, 2, 2, 2, 3, 4, 5 ],
+      testFunction: ({ index, list }) => (list[index] > 3),
+      bool: true,
+      preference: 'tailwardmost',
+    },
     retVal: 7,
   },
   {
-    input: [
-      [ 1, 2, 2, 2, 2, 3, 4, 5 ],
-      (x: number) => (x < 3),
-      false,
-      'tailwardmost'
-    ],
+    input: {
+      list: [ 1, 2, 2, 2, 2, 3, 4, 5 ],
+      testFunction: ({ index, list }) => (list[index] < 3),
+      bool: false,
+      preference: 'tailwardmost',
+    },
     retVal: 7,
   },
   {
-    input: [
-      [ 1, 2, 2, 2, 2, 3, 4, 5 ],
-      (x: number) => (x < 3),
-      false,
-      'headwardmost'
-    ],
+    input: {
+      list: [ 1, 2, 2, 2, 2, 3, 4, 5 ],
+      testFunction: ({ index, list }) => (list[index] < 3),
+      bool: false,
+      preference: 'headwardmost',
+    },
     retVal: 5,
   },
   {
-    input: [
-      [ 1, 2, 2, 2, 2, 3, 4, 5 ],
-      (x: number) => (x > 3),
-      false,
-      'headwardmost'
-    ],
+    input: {
+      list: [ 1, 2, 2, 2, 2, 3, 4, 5 ],
+      testFunction: ({ index, list }) => (list[index] > 3),
+      bool: false,
+      preference: 'headwardmost',
+    },
     retVal: 0,
   },
   {
-    input: [
-      [ 1, 2, 2, 2, 2, 3, 4, 5 ],
-      (x: number) => (x > 3),
-      false,
-      'tailwardmost'
-    ],
+    input: {
+      list: [ 1, 2, 2, 2, 2, 3, 4, 5 ],
+      testFunction: ({ index, list }) => (list[index] > 3),
+      bool: false,
+      preference: 'tailwardmost',
+    },
     retVal: 5,
   },
   {
-    input: [
-      [ 1, 2, 2, 2, 2, 3, 4, 5 ],
-      (x: number) => (x < 1),
-      true,
-      'tailwardmost'
-    ],
+    input: {
+      list: [ 1, 2, 2, 2, 2, 3, 4, 5 ],
+      testFunction: ({ index, list }) => (list[index] < 1),
+      bool: true,
+      preference: 'tailwardmost',
+    },
     retVal: null,
   },
 ];
