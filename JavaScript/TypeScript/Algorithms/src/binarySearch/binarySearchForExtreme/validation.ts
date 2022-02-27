@@ -1,11 +1,11 @@
 import {
-  BinarySearchForBoundaryInputs,
-  BinarySearchForBoundaryReturn,
-} from './binarySearches';
+  BinarySearchForExtremeInputs,
+  BinarySearchForExtremeReturn,
+} from './index';
 
 export type ValidationItem = {
-  input:  BinarySearchForBoundaryInputs,
-  retVal: BinarySearchForBoundaryReturn,
+  input:  BinarySearchForExtremeInputs,
+  retVal: BinarySearchForExtremeReturn,
 };
 
 type ValidationItems = Array<ValidationItem>;

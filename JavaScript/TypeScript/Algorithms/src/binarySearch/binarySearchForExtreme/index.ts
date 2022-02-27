@@ -1,80 +1,43 @@
-type Index = number;
+export type Item = any;
+export type List = Array<Item>;
+export type Index = number;
 
-/**
- * A binary search of a ("low"-to-"high") inequality-sorted list for an index
- * of an item with a specific value, if any exist, and if multiple such indices
- * exist, just return the first such index found with this scheme.
- * Test list items starting with the middle index, using a low/mid/high index
- * scheme.
- */
-export const binarySearchForItem = (
-  list: Array<any>,
-  value: any,
-): Index | null => {
-
-  let low: Index = 0;
-  let high: Index = list.length - 1;
-
-  while (low <= high) {
-    const mid: Index = Math.floor((low + high) / 2);
-    const testValue: any = list[mid];
-
-    if (testValue === value) {
-      return mid;
-    }
-
-    if (testValue > value) {
-      // Test value is too high, so `high` index is too high -- adjust it.
-      high = mid - 1;
-    } else {
-      // Test value is too low, so `low` index is too low -- adjust it.
-      low = mid + 1;
-    }
-  }
-
-  return null; // If no such value is found.
-}
-
-
-
-type Item = any;
-type List = Array<Item>;
-//type Index = number;
-
-type TestFunctionInputs = { index: Index, list: List };
+type TestFunctionInputs = { index: Index, list: List, options?: any };
 type TestFunction = (params: TestFunctionInputs) => boolean;
 
 type HeadExtreme = 'headwardmost' | 'low-index';
 type TailExtreme = 'tailwardmost' | 'high-index';
 
-export type BinarySearchForBoundaryInputs = {
+export type BinarySearchForExtremeInputs = {
   list: List,
   testFunction: TestFunction,
   bool: boolean,
   preference: HeadExtreme | TailExtreme,
+  options?: any,
 };
 
-export type BinarySearchForBoundaryReturn = Index | null;
+export type BinarySearchForExtremeReturn = Index | null;
 
-export type BinarySearchForBoundary = (
-  params: BinarySearchForBoundaryInputs
-) => Index | null;
+export type BinarySearchForExtreme = (
+  params: BinarySearchForExtremeInputs
+) => BinarySearchForExtremeReturn;
 
 /**
  * A binary search of a test-function-sorted list for the index of an item in
  * the list that is the extremal item (headwardmost or tailwardmost - closest
- * to the head or tail of the list) with a particular boolean test-result
- * (true or false), if any -- so finding the index of an element either at an
- * end of the list or at a boundary in the boolean-valued test-function-results,
- * if such an index exists.  Assuming that the list really is test-function-
- * sorted, there can be only one such boundary, if any.  Selecting a particular
- * desired test-function value of `bool` determines which side of the boundary
- * is chosen.  And preferring a headwardmost or tailwardmost item determines
- * which item is chosen if the test function is constant across the whole list.
+ * to the head or tail of the list) satisfying a particular boolean test-result
+ * (true or false), returning the index or null if such an item doesn't exist.
+ * So, this search finds the index of an element either at an end of the list
+ * or at a boundary in the boolean-valued test-function-results, if such an
+ * element exists.  Assuming that the list really is test-function-sorted,
+ * there can be only one such boundary, if any.  Selecting a particular desired
+ * test-function value of `bool` determines which side of the boundary is
+ * chosen.  And preferring a headwardmost or tailwardmost item determines which
+ * item is chosen if the test function is constant across the whole list.
  */
-export const binarySearchForBoundary: BinarySearchForBoundary = (params) => {
+export const binarySearchForExtreme: BinarySearchForExtreme = (params) => {
 
-  const { list, testFunction, bool, preference } = params;
+  const { list, testFunction, bool, preference, options } = params;
 
   let prefer: 'low' | 'high';
   switch (preference) {
@@ -89,10 +52,10 @@ export const binarySearchForBoundary: BinarySearchForBoundary = (params) => {
   }
 
   let low: Index = 0;
-  let lowBool = testFunction({ index: low, list });
+  let lowBool = testFunction({ index: low, list, options });
 
   let high: Index = list.length - 1;
-  let highBool = testFunction({ index: high, list });
+  let highBool = testFunction({ index: high, list, options });
 
   /**
    * Boundary cases of this problem (ironically *not* dealing with the
@@ -117,7 +80,7 @@ export const binarySearchForBoundary: BinarySearchForBoundary = (params) => {
     // low = nope (too low) ; high = potential
     while (low !== high - 1) {
       const mid = Math.floor((low + high) / 2);
-      const midBool = testFunction({ index: mid, list });
+      const midBool = testFunction({ index: mid, list, options });
       if (midBool === bool) {
         // mid is a new potential (so `high` index is too high -- adjust it).
         high = mid;
@@ -134,7 +97,7 @@ export const binarySearchForBoundary: BinarySearchForBoundary = (params) => {
     // low = potential ; high = nope (too high)
     while (low !== high - 1) {
       const mid = Math.ceil((low + high) / 2);
-      const midBool = testFunction({ index: mid, list });
+      const midBool = testFunction({ index: mid, list, options });
       if (midBool === bool) {
         // mid is a new potential (so `low` index is too low -- adjust it).
         low = mid;
@@ -153,3 +116,5 @@ export const binarySearchForBoundary: BinarySearchForBoundary = (params) => {
    */
   return null;
 }
+
+export default binarySearchForExtreme;
