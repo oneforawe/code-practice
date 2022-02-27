@@ -33,7 +33,7 @@ export type BinarySearchForExtreme = (
  * there can be only one such boundary, if any.  Selecting a particular desired
  * test-function value of `bool` determines which side of the boundary is
  * chosen.  And preferring a headwardmost or tailwardmost item determines which
- * item is chosen if the test function is constant across the whole list.
+ * side of a uniformly-boolean-valued region is chosen.
  */
 export const binarySearchForExtreme: BinarySearchForExtreme = (params) => {
 
