@@ -3,7 +3,7 @@
  * run `mocha lib/<path-to-this-library>` in the shell.
  */
 
-import { solutionProposals, SolutionProposal } from './propose';
+import { solutionProposals, SolutionProposal } from './proposals';
 import { validationItems, ValidationItem } from './validation';
 import assert from 'assert';
 
