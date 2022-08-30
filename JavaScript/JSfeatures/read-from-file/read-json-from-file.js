@@ -16,3 +16,7 @@ console.log(`typeof object = ${typeof object}`)
 console.log('object:')
 console.log(object)
 console.log('')
+
+// NOTE FOR TYPESCRIPT:
+// you must add the encoding
+// const objectTS = JSON.parse(fs.readFileSync(filename, { encoding: 'utf8' }))
